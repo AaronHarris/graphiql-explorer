@@ -2067,8 +2067,7 @@ const defaultStyles = {
   },
 
   explorerActionsStyle: {
-    margin: '4px -8px -8px',
-    paddingLeft: '8px',
+    padding: '3px 8px',
     bottom: '0px',
     width: '100%',
     textAlign: 'center',
@@ -2607,8 +2606,8 @@ class Explorer extends React.PureComponent<Props, State> {
       actionsOptions.length === 0 ? null : (
         <div
           style={{
-            minHeight: '50px',
-            maxHeight: '50px',
+            minHeight: '40px',
+            maxHeight: '40px',
             overflow: 'none',
           }}>
           <form
@@ -2626,13 +2625,14 @@ class Explorer extends React.PureComponent<Props, State> {
                 display: 'inline-block',
                 flexGrow: '0',
                 textAlign: 'right',
+                marginRight: '5px',
               }}>
               Add new{' '}
             </span>
             <select
               onChange={event => this._setAddOperationType(event.target.value)}
               value={this.state.newOperationType}
-              style={{flexGrow: '2'}}>
+              style={{flexGrow: '2', marginRight: '5px'}}>
               {actionsOptions}
             </select>
             <button
@@ -2686,7 +2686,7 @@ class Explorer extends React.PureComponent<Props, State> {
           textOverflow: 'ellipsis',
           whiteSpace: 'nowrap',
           margin: 0,
-          padding: 8,
+          padding: 0,
           fontFamily:
             'Consolas, Inconsolata, "Droid Sans Mono", Monaco, monospace',
           display: 'flex',
@@ -2697,7 +2697,8 @@ class Explorer extends React.PureComponent<Props, State> {
         <div
           style={{
             flexGrow: '1',
-            overflow: 'scroll',
+            padding: '8px',
+            overflow: 'auto scroll',
           }}>
           {relevantOperations.map(
             (
